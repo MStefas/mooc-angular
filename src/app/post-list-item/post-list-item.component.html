@@ -1,0 +1,22 @@
+<li [ngClass]="{'list-group-item':true, 'list-group-item-danger': loveIts < 0, 'list-group-item-success': loveIts > 0}">
+  <div class="row">
+    <div class="col-xs-3">
+      <h4  [ngStyle]="{color:getColor()}" >{{title}}</h4>
+    </div>
+    <div class="col-xs-7"></div>
+    <div class="col-xs-2 datePart">{{createdAt | date: 'dd/MM/yyyy, HH:MM a' | uppercase}}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 contentPart" [ngStyle]="{color:getColor()}">
+      {{content}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-1">
+      <div class="btn btn-success" (click)="onClickLove()">Love it!</div>
+    </div>
+    <div class="col-xs-2">
+      <div class="btn btn-danger" (click)="onClickDontLove()">Don't love it!</div>
+    </div>
+  </div>
+</li>
